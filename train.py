@@ -14,7 +14,8 @@ def main(args):
         config = load_config(args.config_path)
         trainer = Trainer(config)
         shutil.copy(
-            args.config_path, os.path.join(trainer.save_path, "config.json"),
+            args.config_path,
+            os.path.join(trainer.save_path, "config.json"),
         )
     try:
         trainer.train()
@@ -32,7 +33,9 @@ if __name__ == "__main__":
         help="path to config json file",
     )
     parser.add_argument(
-        "--checkpoint_path", type=str, help="path to checkpoint file",
+        "--checkpoint_path",
+        type=str,
+        help="path to checkpoint file",
     )
     args = parser.parse_args()
     set_seed()

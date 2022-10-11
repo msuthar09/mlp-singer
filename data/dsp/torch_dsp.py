@@ -27,7 +27,10 @@ class SignalProcessor:
         a_min=1e-5,
     ):
         self.spect_fn = Spectrogram(
-            n_fft=n_fft, win_length=win_length, hop_length=hop_length, power=1,
+            n_fft=n_fft,
+            win_length=win_length,
+            hop_length=hop_length,
+            power=1,
         )
         self.mel_basis = torch.from_numpy(
             librosa.filters.mel(sample_rate, n_fft, n_mels, f_min, f_max)

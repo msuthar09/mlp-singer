@@ -34,7 +34,7 @@ If you find this work useful, please cite this work as follows.
    pip install -r requirements.txt
    ```
 
-3. To generate audio files with the trained model checkpoint, [download](https://drive.google.com/drive/folders/1YuOoV3lO2-Hhn1F2HJ2aQ4S0LC1JdKLd) the HiFi-GAN checkpoint along with its configuration file and place them in `hifi-gan`. 
+3. To generate audio files with the trained model checkpoint, [download](https://drive.google.com/drive/folders/1YuOoV3lO2-Hhn1F2HJ2aQ4S0LC1JdKLd) the HiFi-GAN checkpoint along with its configuration file and place them in `hifi-gan`.
 
 4. Run inference using the following command. Generated audio samples are saved in the `samples` directory by default.
 
@@ -60,13 +60,13 @@ The directory names correspond to file extensions. We have included a sample as 
 
 ## Preprocessing
 
-Once you have prepared the dataset, run 
+Once you have prepared the dataset, run
 
 ```
 python -m data.serialize
 ```
 
-from the root directory. This will create `data/bin` that contains binary files used for training. This repository already contains example binary files created from the sample in `data/raw`. 
+from the root directory. This will create `data/bin` that contains binary files used for training. This repository already contains example binary files created from the sample in `data/raw`.
 
 ## Training
 
@@ -90,7 +90,7 @@ You can also continue training from a checkpoint. For example, to resume trainin
 python train.py --checkpoint_path /checkpoints/default/model.pt
 ```
 
-Unless a `--config_path` flag is explicitly provided, the script will read `config.json` in the checkpoint directory. In both cases, model checkpoints will be saved regularly according to the interval defined in the configuration file. 
+Unless a `--config_path` flag is explicitly provided, the script will read `config.json` in the checkpoint directory. In both cases, model checkpoints will be saved regularly according to the interval defined in the configuration file.
 
 ## Inference
 
@@ -100,9 +100,9 @@ MLP Singer produces mel-spectrograms, which are then fed into a neural vocoder t
 python inference.py --checkpoint_path PATH/TO/CHECKPOINT.pt --song little_star
 ```
 
-This will create `.wav` samples in the `samples` directory, and save mel-spectrogram files as `.npy` files in `hifi-gan/test_mel_dirs`. 
+This will create `.wav` samples in the `samples` directory, and save mel-spectrogram files as `.npy` files in `hifi-gan/test_mel_dirs`.
 
-You can also specify any song you want to perform inference on, as long as the song is present in `data/raw`. The argument to the `--song` flag should match the title of the song as it is saved in `data/raw`.  
+You can also specify any song you want to perform inference on, as long as the song is present in `data/raw`. The argument to the `--song` flag should match the title of the song as it is saved in `data/raw`.
 
 ## Note
 

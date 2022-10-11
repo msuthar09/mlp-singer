@@ -4,7 +4,10 @@ import mido
 import torch
 
 from .dsp import TacotronSTFT
-from .g2p import encode
+
+# from .g2p import encode
+
+from .g2p_hi import encode
 
 warnings.simplefilter(action="ignore", category=UserWarning)
 
